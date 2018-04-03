@@ -17,7 +17,7 @@ To test clone repo and:
 ```
 npm install
 bower install
-gulp minify
+npm run dist
 ```
 
 Start favorite http server (http-server or puer for instance) and open
