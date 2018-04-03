@@ -39,7 +39,7 @@ module.exports = {
     modules: [
       path.join(__dirname, "src"),
       path.join(__dirname, "src", "material"),
-      path.join(__dirname, "..", "angular-schema-form", "dist"),
+      path.join(__dirname, "node_modules", "angular-schema-form", "dist"),
       'node_modules',
     ],
     extensions: [ '.js', '.html' ]
@@ -63,7 +63,8 @@ module.exports = {
         use: [{
           loader: 'ngtemplate-loader',
           options: {
-            relativeTo: path.join(__dirname, 'src')
+            relativeTo: path.join(__dirname, 'src'),
+            module: 'angular'
           }
         }, 'html-loader'],
         exclude: /(index)/
