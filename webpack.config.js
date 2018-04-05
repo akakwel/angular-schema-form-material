@@ -64,7 +64,7 @@ module.exports = {
           loader: 'ngtemplate-loader',
           options: {
             relativeTo: path.join(__dirname, 'src'),
-            module: 'angular'
+            module: 'schemaForm'
           }
         }, 'html-loader'],
         exclude: /(index)/
