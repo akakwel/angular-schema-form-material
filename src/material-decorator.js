@@ -93,6 +93,14 @@ function materialDecoratorConfig(
     if (args.form.grid) {
       Object.getOwnPropertyNames(args.form.grid).forEach(function(property, idx, array) {
         layoutDiv.setAttribute(property, args.form.grid[property]);
+
+        // Workaround to solve the missing ng material layout compilation
+        // Reproduced with Angular Material 1.1.5
+        // #FIXME with a proper solution ($mdCompiler ?)
+        layoutDiv.className += ' ' + property;
+        if (args.form.grid[property] != null && args.form.grid[property] !== "") {
+          layoutDiv.className += '-' + args.form.grid[property];
+        }
       });
     };
   };
